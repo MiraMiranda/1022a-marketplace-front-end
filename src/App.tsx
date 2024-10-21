@@ -18,7 +18,7 @@ function App() {
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
     //Colocar em uma variável
-  }, [])
+  }, []) 
 
   return (
     <>
@@ -29,7 +29,9 @@ function App() {
             return (
               <div key={produto.id} className="produto-item">
                 <h1>{produto.nome}</h1>
-                <img src={produto.imagem} alt="Imagem do celular" />
+                <div className='container-imagem'>
+                  <img src={produto.imagem} alt="Imagem do celular" />
+                </div>
                 <p>{produto.preco}</p>
                 <p>{produto.descricao}</p>
               </div>
@@ -38,7 +40,6 @@ function App() {
         }
 
       </div>
-
     </>
   )
 }
